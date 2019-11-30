@@ -13,3 +13,15 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+mix.scripts([
+    'resources/js/jquery.js',
+    'resources/js/materialize.js',
+    'resources/js/particles.js',
+    'resources/js/home.js'
+], 'public/js/all.js');
+
+mix.styles([
+    'resources/sass/materialize.scss',
+    'resources/sass/home.scss'
+], 'public/css/all.css');
