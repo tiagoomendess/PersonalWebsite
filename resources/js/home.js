@@ -1,19 +1,28 @@
 window.onload = function () {
-    document.getElementById('loader').classList.add('loaded');
-    setTimeout(function(){
-        document.getElementById('loader').classList.add('hide');
-        document.getElementById('loader').classList.remove('loader');
-    }, 300);
+    $(document).ready(function() {
+        setTimeout(function(){
+            document.getElementById('loader').classList.add('fade-out');
+            document.getElementById('footer').classList.remove('hide');
+            document.getElementById('footer').classList.add('fade-in');
+            $(".loader").addClass('hide');
+        }, 200);
+    });
+
+    setTimeout(function () {
+        if (document.location.pathname == "/") {
+            console.log("Hey, you still here? try " + document.location.href + "cv 😀");
+        } else {
+            console.log("Nothing to see here 🙄");
+        }
+    }, 25000);
 };
 
 setBackgroundImage();
 
-particlesJS.load('particles-js', '/particles-config.json', function() {
-    console.log('Loaded Particles!');
-});
+particlesJS.load('particles-js', '/particles-config.json');
 
 function setBackgroundImage() {
-    $('body').attr('style', 'background-image: url(images/' + getRandomImageId() + '.jpg');
+    $('body').attr('style', 'background-image: url(/images/' + getRandomImageId() + '.jpg');
 }
 
 function getRandomImageId(){
@@ -41,3 +50,14 @@ function getRandomImageId(){
             return 1;
     }
 }
+
+$(".locale-flags").on( "click", function() {
+    $("#footer").addClass("fade-out");
+    $("#footer").removeClass("fade-in");
+
+    $("#loader").addClass("fade-in");
+    $("#loader").removeClass("fade-out");
+
+    $(".loader").removeClass("hide");
+
+});

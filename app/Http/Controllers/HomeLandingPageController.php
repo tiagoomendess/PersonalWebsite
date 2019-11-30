@@ -2,24 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Services\HomeLandingPageService;
 use Illuminate\View\View;
 
 class HomeLandingPageController extends Controller
 {
-    private $service;
+    /** @var HomeLandingPageService */
+    private $homeLandingPageService;
 
-    public function __construct()
+    public function __construct(HomeLandingPageService $homeLandingPageService)
     {
-
+        $this->homeLandingPageService = $homeLandingPageService;
     }
 
-    public function index(Request $request): View
+    public function index(): View
     {
-        $data = [
-            'age' => 23
+        $birthDate = new \DateTime(env('BIRTH_DATE', '2015-01-01'));
+
+        $viewData = [
+            'age' => $this->homeLandingPageService->getAge($birthDate)
         ];
 
-        return view('pages.home', $data);
+        return view('pages.home', $viewData);
     }
 }
