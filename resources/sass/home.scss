@@ -1,0 +1,100 @@
+html, body{
+
+  width: 100%;
+  height: 100%;
+  margin: 0 0;
+  padding: 0 0;
+
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#particles-js {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+}
+
+.page {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.page .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page .info p {
+  color: #ffffff;
+  margin: 7px 0;
+  text-shadow: black 1px 1px 1px;
+}
+
+.page .info a {
+  color: #ffffff;
+
+}
+
+.page .info a:hover {
+  text-shadow: #0f0f0f 1px 2px 4px;
+}
+
+.page .info h1 {
+  margin: 7px 0 1.68rem;
+  color: white;
+  font-weight: 200;
+  text-shadow: black 1px 1px 1px;
+  font-size: 80px;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: #272727;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .page .info h1 {
+    font-size: 11vw;
+  }
+}
+
+.out-btn-links {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.out-btn-links > a {
+  margin: 0 .5rem;
+}
+
+.out-btn-links > a > i {
+  font-size: 4rem;
+}
