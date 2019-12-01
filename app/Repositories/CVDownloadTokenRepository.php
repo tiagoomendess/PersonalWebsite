@@ -2,11 +2,13 @@
 
 namespace App\Repositories;
 
+use App\DownloadToken;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CVDownloadTokenRepository
 {
-    public function canTokenBeUsed(string $token): bool
+    public function incrementTokenUsages(string $token): bool
     {
         try {
             DB::beginTransaction();
@@ -28,12 +30,19 @@ class CVDownloadTokenRepository
 
             //update
             DB::table('download_tokens')->where('token', '=', $token)->update(['download_count' => $downloadCount + 1]);
+
             DB::commit();
             return true;
+
         } catch (\Exception $e) {
+            Log::error("Error in transaction for token $token: " . $e->getMessage());
             DB::rollBack();
-            DB::commit();
             return false;
         }
+    }
+
+    public function getObjectByToken(string $token): ?DownloadToken
+    {
+        return DownloadToken::where('token', $token)->first();
     }
 }
