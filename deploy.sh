@@ -22,7 +22,7 @@ echo "\n--- Compiling sccs and js ------------"
 npm run production
 
 echo "\n--- Running migrations ------------"
-php artisan migrate
+php artisan migrate -n --env=production
 
 echo "\n--- Dealing with permissions ------------"
 chmod 755 -R ../meusite/
