@@ -164,6 +164,13 @@ body {
   transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
+.token-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 600px) {
 
   .page .info h1 {
