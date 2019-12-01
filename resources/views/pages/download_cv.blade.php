@@ -13,7 +13,7 @@
         <section class="info">
             @if($canDownload)
                 <span style="font-size: 6rem">&#x1F60A;</span>
-                <p class="flow-text" style="margin-bottom: 20px">{{ trans('general.thanks_download') }}</p>
+                <p class="flow-text center" style="margin-bottom: 20px">{{ trans('general.thanks_download') }}</p>
                 <div style="height: 37px">
                     <a href="{{ route('home') }}" id="go_back_download"
                        class="waves-effect waves-light btn black-text white fade-out">{{ trans('general.go_back') }}</a>
@@ -33,11 +33,11 @@
                 </script>
             @else
                 @if(empty($token))
-                    <p class="flow-text">{{ trans('general.ask_for_token') }} &#128521;</p>
+                    <p class="flow-text center">{{ trans('general.ask_for_token') }} &#128521;</p>
                     <form action="{{ route('cv') }}" method="GET">
                         <div class="row">
-                            <div class="col s12">
-                                <div class="input-field inline white-text">
+                            <div class="col s12 token-form">
+                                <div class="input-field inline white-text" style="margin-right: 5px">
                                     <!-- If you really want my CV just send me an email. I'll send you a token -->
                                     <input name="token" id="token" type="text" class="white-text" autocomplete="off">
                                     <label for="token" class="white-text">{{ trans('general.download_token') }}</label>
@@ -48,8 +48,8 @@
                         </div>
                     </form>
                 @else
-                    <p class="flow-text" style="margin-bottom: 20px">{{ trans('general.invalid_token') }} &#128546;</p>
-                    <a href="{{ route('home') }}"
+                    <p class="flow-text center" style="margin-bottom: 20px">{{ trans('general.invalid_token') }} &#128546;</p>
+                    <a href="{{ back()->getTargetUrl() ? back()->getTargetUrl() : '/' }}"
                        class="waves-effect waves-light btn black-text white">{{ trans('general.go_back') }}</a>
                 @endif
             @endif
