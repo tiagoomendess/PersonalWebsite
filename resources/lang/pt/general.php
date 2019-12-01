@@ -9,5 +9,6 @@ return [
     'download' => 'Descarregar',
     'go_back' => 'Voltar',
     'invalid_token' => 'Peço desculpa, mas não é possível descarregar o meu CV com esse link',
-    'ask_for_token' => 'Só se me disseres a palavra secreta'
+    'ask_for_token' => 'Só se me disseres a palavra secreta',
+    'thanks_download' => 'Obrigado! O download deverá começar em breve'
 ];

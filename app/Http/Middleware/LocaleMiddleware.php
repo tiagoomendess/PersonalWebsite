@@ -23,6 +23,7 @@ class LocaleMiddleware
 
         App::setLocale($locale);
         $request->session()->flash('locale', $locale);
+        $request->setLocale($locale);
         if (empty($cookieLocale)) {
             Cookie::queue('locale', $locale, 525948);
         }
