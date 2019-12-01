@@ -1,31 +1,34 @@
 echo "#########################"
-echo "#   Starting deploy!"   #
+echo "#   Starting deploy!"   #"
 echo "#########################"
 
-echo "--- Taking application down ------------"
+echo "\n--- Taking application down ------------"
 php artisan down
 
+echo "\n--- Get Code -----------"
 git reset --hard
 git pull
+
+echo "\n--- Clear Cache -----------"
 php artisan cache:clear
 
-echo "--- Composer install -----------"
+echo "\n--- Composer install -----------"
 composer install
 
-echo "--- NPM nnstall ------------"
+echo "\n--- NPM nnstall ------------"
 npm install
 
-echo "--- Compiling sccs and js ------------"
+echo "\n--- Compiling sccs and js ------------"
 npm run production
 
-echo "--- Running migrations ------------"
+echo "\n--- Running migrations ------------"
 php artisan migrate
 
-echo "--- Dealing with permissions ------------"
+echo "\n--- Dealing with permissions ------------"
 chmod 755 -R ../meusite/
 chown www-data ../meusite/ -R
 
-echo "--- Application Up! ------------"
+echo "\n--- Application Up! ------------"
 php artisan up
 
 echo "#################"
