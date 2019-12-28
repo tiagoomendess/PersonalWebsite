@@ -23,5 +23,6 @@ mix.scripts([
 
 mix.styles([
     'resources/sass/materialize.scss',
-    'resources/sass/home.scss'
+    'resources/sass/home.scss',
+    'resources/sass/material-icons.scss'
 ], 'public/css/all.css');
