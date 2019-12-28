@@ -79,13 +79,11 @@ class TokenAdminController extends Controller
     public function update(Request $request, $id): RedirectResponse
     {
         $this->validate($request, [
-            'download_count' => 'required|integer|min:0',
             'max_download' => 'required|integer|min:1',
             'locale' => 'string|required|in:' . implode(",", config('custom.available_locales'))
         ]);
 
         $token = DownloadToken::findOrfail($id);
-        $token->download_count = $request->input('download_count');
         $token->max_download = $request->input('max_download');
         $token->locale = $request->input('locale');
         $token->save();
