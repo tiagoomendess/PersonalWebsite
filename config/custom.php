@@ -7,5 +7,6 @@ return [
         'pt',
         'en',
         'fr'
-    ]
+    ],
+    'token_admin_pin' => env('TOKEN_ADMIN_PIN', '1234')
 ];

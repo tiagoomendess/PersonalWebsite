@@ -18,3 +18,8 @@ Route::get('/cv/{token}/download/{random_string}', 'CVDownloadController@downloa
     'token' => '^[A-Za-z0-9\-\_]{1,50}$',
     'random_string' => '^[A-Za-z0-9\-\_]{12}$'
 ]);
+
+Route::get('/pin', 'SecurityPINController@show')->name('show_pin');
+Route::post('/pin', 'SecurityPINController@setPIN')->name('set_pin');
+
+Route::resource('tokens', 'TokenAdminController');
