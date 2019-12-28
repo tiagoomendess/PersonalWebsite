@@ -21,7 +21,7 @@
 
     <div class="row">
         <div class="input-field col s6">
-            <input name="download_count" class="white-text" placeholder="Download Count" id="download_count" type="number" value="{{ isset($download_count) ? $download_count : 0 }}">
+            <input disabled name="download_count" class="white-text" placeholder="Download Count" id="download_count" type="number" value="{{ isset($download_count) ? $download_count : 0 }}">
             <label class="white-text" for="download_count">{{ trans('general.downloads') }}</label>
         </div>
 
