@@ -52,7 +52,6 @@ class TokenAdminController extends Controller
     {
         $this->validate($request, [
             'token' => 'required|string|min:3|max:50|unique:download_tokens',
-            'download_count' => 'required|integer|min:0',
             'max_download' => 'required|integer|min:1',
             'locale' => 'string|required|in:' . implode(",", config('custom.available_locales'))
         ]);
@@ -60,7 +59,6 @@ class TokenAdminController extends Controller
         $token = new DownloadToken();
 
         $token->token = $request->input('token');
-        $token->download_count = $request->input('download_count');
         $token->max_download = $request->input('max_download');
         $token->locale = $request->input('locale');
         $token->save();
