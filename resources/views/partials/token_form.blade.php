@@ -14,19 +14,19 @@
 
     <div class="row">
         <div class="input-field col s12">
-            <input name="token" {{ isset($token) ? 'disabled' : '' }} class="white-text" placeholder="Token" id="token" type="text" value="{{ isset($token) ? $token : \Illuminate\Support\Str::random(9) }}">
+            <input required name="token" {{ isset($token) ? 'disabled' : '' }} class="white-text" placeholder="Token" id="token" type="text" value="{{ isset($token) ? $token : \Illuminate\Support\Str::random(9) }}">
             <label class="white-text" for="token">{{ trans('general.token', ['token' => ' ']) }}</label>
         </div>
     </div>
 
     <div class="row">
         <div class="input-field col s6">
-            <input disabled name="download_count" class="white-text" placeholder="Download Count" id="download_count" type="number" value="{{ isset($download_count) ? $download_count : 0 }}">
+            <input required disabled name="download_count" class="white-text" placeholder="Download Count" id="download_count" type="number" value="{{ isset($download_count) ? $download_count : 0 }}">
             <label class="white-text" for="download_count">{{ trans('general.downloads') }}</label>
         </div>
 
         <div class="input-field col s6">
-            <input name="max_download" class="white-text" placeholder="Max Downloads" id="max_download" type="number" value="{{ isset($max_download) ? $max_download : '' }}">
+            <input required name="max_download" class="white-text" placeholder="Max Downloads" id="max_download" type="number" value="{{ isset($max_download) ? $max_download : '' }}">
             <label class="white-text" for="max_download">{{ trans('general.max_downloads') }}</label>
         </div>
     </div>
