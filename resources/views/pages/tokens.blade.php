@@ -27,7 +27,7 @@
                             <td>{{ $token->token }}</td>
                             <td class="center"><span>{{ $token->download_count }}/{{ $token->max_download }}</span></td>
                             <td>
-                                <img src="https://www.countryflags.io/{{ \App\Http\Controllers\LocaleController::LOCALE_TO_COUNTRY_CODE[$token->locale] }}/flat/32.png">
+                                <img src="https://flagcdn.com/h20/{{ \App\Http\Controllers\LocaleController::LOCALE_TO_COUNTRY_CODE[$token->locale] }}.png">
                             </td>
                             <td class="right">
                                 <a style="margin: 2px 2px" class="waves-effect waves-light btn green darken-1 right"

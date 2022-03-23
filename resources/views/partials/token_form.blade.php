@@ -37,11 +37,11 @@
                 @foreach(config('custom.available_locales') as $key => $locale)
                     @if((!isset($tokenLocale) && $key == 0) || (isset($tokenLocale) && $tokenLocale == $locale))
                         <option
-                                data-icon="https://www.countryflags.io/{{ \App\Http\Controllers\LocaleController::LOCALE_TO_COUNTRY_CODE[$locale] }}/flat/64.png"
+                                data-icon="https://flagcdn.com/h20/{{ \App\Http\Controllers\LocaleController::LOCALE_TO_COUNTRY_CODE[$locale] }}.png"
                                 value="{{ $locale }}" selected>{{ trans_choice('general.locale', $locale) }}</option>
                     @else
                         <option
-                                data-icon="https://www.countryflags.io/{{ \App\Http\Controllers\LocaleController::LOCALE_TO_COUNTRY_CODE[$locale] }}/flat/64.png"
+                                data-icon="https://flagcdn.com/h20/{{ \App\Http\Controllers\LocaleController::LOCALE_TO_COUNTRY_CODE[$locale] }}.png"
                                 value="{{ $locale }}">{{ trans_choice('general.locale', $locale) }}</option>
                     @endif
                 @endforeach
